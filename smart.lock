@@ -1,0 +1,39 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "googlemaps": {
+        "version": "0.0.2"
+      },
+      "collectionFS": {
+        "version": "0.3.7"
+      },
+      "cfs-public-folder": {
+        "version": "0.0.3"
+      },
+      "semantic-ui-less": {}
+    },
+    "packages": {
+      "googlemaps": {
+        "git": "https://github.com/drewjw81/meteor-googlemaps.git",
+        "tag": "v0.0.2",
+        "commit": "da8785c82cfd7de0111f898ef10728e7ed24e361"
+      },
+      "collectionFS": {
+        "git": "https://github.com/raix/Meteor-CollectionFS.git",
+        "tag": "v0.3.7",
+        "commit": "34d9fb363472e44c6dba4a1473a9e106e107f5a9"
+      },
+      "cfs-public-folder": {
+        "git": "https://github.com/nooitaf/meteor-cfs-public-folder.git",
+        "tag": "v0.0.3",
+        "commit": "581c716424b374efb6f611110002621f9cc9212b"
+      },
+      "semantic-ui-less": {
+        "git": "https://github.com/nooitaf/meteor-semantic-ui-less.git",
+        "tag": "v0.13.0",
+        "commit": "12fc31a076e2b72724ac7f35514cd9cb88e5855c"
+      }
+    }
+  }
+}

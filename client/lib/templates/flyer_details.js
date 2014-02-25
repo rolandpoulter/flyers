@@ -1,0 +1,2 @@
+
+Template.flyer_details;

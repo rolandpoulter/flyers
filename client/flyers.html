@@ -1,0 +1,163 @@
+<head>
+	<title>flyer.meteor.com</title>
+	<link rel="stylesheet" href="classic.css">
+	<link rel="stylesheet" href="classic.date.css">
+	<link rel="stylesheet" href="classic.time.css">
+	<script src="/jquery-2.1.0.js"></script>
+	<script src="/packery.js"></script>
+	<script src="/picker.js"></script>
+	<script src="/picker.date.js"></script>
+	<script src="/picker.time.js"></script>
+</head>
+
+<body>
+	{{> page}}
+</body>
+
+<template name="page">
+	<div class="page">
+		{{> header}}
+		{{> create_flyer}}
+		{{> flyer_gallery}}
+	</div>
+</template>
+
+<template name="header">
+	<div class="header ui menu secondary menu">
+		{{#if isAdmin}}
+			<a class="toggle_create_flyer item{{#if isCreatingAFlyer}} active{{/if}}" href="#">Create Flyer</a>
+		{{/if}}
+		<div class="right menu">
+			{{loginButtons align="right"}}
+		</div>
+	</div>
+</template>
+
+<template name="flyer_gallery">
+	<div class="flyer_gallery">
+		{{#each flyers_files}}
+			{{> flyer_poster}}
+		{{/each}}
+		<div class="clear"></div>
+	</div>
+</template>
+
+<template name="flyer_poster">
+	<div class="flyer_poster">
+		<div class="frame">
+			<img></img>
+			<a class="delete negative ui button">Delete</a>
+		</div>
+	</div>
+</template>
+
+<template name="flyer_details">
+
+</template>
+
+<template name="create_flyer">
+	{{#if isCreatingAFlyer}}
+		<div class="create_flyer">
+			{{> flyer_forms}}
+		</div>
+	{{/if}}
+</template>
+
+<template name="edit_flyer">
+	<div class="edit_flyer">
+		{{> flyer_forms}}
+	</div>
+</template>
+
+<template name="flyer_forms">
+	<div class="flyer_forms ui form small">
+		<div class="ui two column page grid">
+			{{> type_form}}
+			{{> submission_form}}
+			{{> posters_form}}
+			{{> times_form}}
+			{{> submission_form}}
+			{{> locations_form}}
+			{{> meta_data_form}}
+			{{> submission_form}}
+		</div>
+	</div>
+</template>
+
+<template name="type_form">
+	<select>
+		<option>Custom</option>
+		<option>Event</option>
+		<option>Annoucement</option>
+	</select>
+</template>
+
+<template name="posters_form">
+	<form class="posters column">
+		<div class="ui segment">
+			<h3>Poster:</h3>
+			<input class="poster_files" name="file" type="file" multiple>
+			<div class="drop_upload">
+				Drop your files here to upload.
+			</div>
+  	</div>
+	</form>
+</template>
+
+<template name="times_form">
+	<form class="times column">
+		<div class="ui segment">
+			<h3>Times:</h3>
+			<div class="entry">
+				<div class="three fields">
+					<div class="field">
+						<input type="text" class="label" name="label" value="" placeholder="Expires">
+					</div>
+					<div class="field">
+						<input type="text" class="datepicker" name="date" value="" placeholder="25 February, 2014">
+					</div>
+					<div class="field">
+						<input type="text" class="timepicker" name="time" value="" placeholder="6:30 PM">
+					</div>
+				</div>
+			</div>
+			<button class="add_entry positive ui button">+</button>
+		</div>
+	</form>
+</template>
+
+<template name="locations_form">
+	<form class="locations column">
+		<div class="ui segment">
+			<h3>Location:</h3>
+			<input type="search" class="address" name="adress" value="" placeholder="search">
+			<div class="map_canvas"></div>
+		</div>
+	</form>
+</template>
+
+<template name="meta_data_form">
+	<form class="meta_data column">
+		<div class="ui segment">
+			<h3>Meta Data:</h3>
+			<div class="entry">
+				<div class="two fields">
+					<div class="field"><input type="text" class="" name="label" value="" placeholder="Title"></div>
+					<div class="field"><textarea name="value" value="" placeholder="Lost dog!" cols="1"></textarea></div>
+				</div>
+			</div>
+			<button class="add_entry positive ui button">+</button>
+		</form>
+	</div>
+</template>
+
+<template name="submission_form">
+	<form class="submission two wide colum">
+		<div class="ui menu">
+			<button class="cancel_create_flyer negative ui button">Cancel</button>
+			<button class="clear negative ui button">Clear</button>
+			<button class="save positive ui button">Save</button>
+		</div>
+	</form>
+</template>
+

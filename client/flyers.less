@@ -1,0 +1,93 @@
+/* CSS declarations go here */
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	font: 1em/1.4em arial, sans-serif;
+	margin: 0;
+}
+
+.page {}
+
+.header {
+}
+
+.flyer_gallery {
+	background: #222;
+
+	.flyer_poster {
+		width: auto;
+		height: auto;
+		border-radius: 5px;
+		padding: 2px;
+		border: 1px solid black;
+		box-sizing: border-box;
+		display: inline-block;
+
+		frame {
+			position: relative;
+		}
+
+		a.delete {
+			display: none;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+
+		&:hover {
+			a.delete {display: inline-block;}
+		}
+
+		img.scale {
+			width: 100%;
+			box-sizing: border-box;
+		}
+	}
+
+}
+
+.create_flyer {
+	position: absolute;
+	width: 98.5%;
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 1em;
+	padding: 1em;
+	box-sizing: border-box;
+	z-index: 9999;
+}
+
+.flyer_forms {
+
+	form.posters {
+
+		.drop_upload {
+			border: 1px dotted grey;
+		}
+
+	}
+
+	form.times {}
+
+	form.locations {
+
+		.map_canvas {
+			width: auto;
+			height: 300px;
+		}
+
+	}
+
+	form.meta_data {
+
+		textarea {
+			min-height: 3em;
+			height: 3em;
+		}
+
+	}
+
+}

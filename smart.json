@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "googlemaps": "0.0.2",
+    "collectionFS": "0.3.7",
+    "cfs-public-folder": "0.0.3",
+    "semantic-ui-less": {}
+  }
+}
